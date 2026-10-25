@@ -1,0 +1,259 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form - Assignment 4.2</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 650px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #7f8c8d;
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #34495e;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="url"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    input[type="url"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #3498db;
+      outline: none;
+    }
+
+    input:disabled,
+    select:disabled,
+    textarea:disabled {
+      background-color: #e9ecef;
+      color: #6c757d;
+      cursor: not-allowed;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+
+    .inline-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: normal;
+      cursor: pointer;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .required-asterisk {
+      color: #e74c3c;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      margin-top: 10px;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Job Application Form</h1>
+    <p class="subtitle">Please fill out the form below to apply for the position.</p>
+
+    <form action="#" method="POST">
+      
+      <!-- 1. Full Name -->
+      <div class="form-group">
+        <label for="fullName">Full Name <span class="required-asterisk">*</span></label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Jane Doe" required>
+      </div>
+
+      <!-- 1. Email -->
+      <div class="form-group">
+        <label for="email">Email Address <span class="required-asterisk">*</span></label>
+        <input type="email" id="email" name="email" placeholder="e.g. jane.doe@example.com" required>
+      </div>
+
+      <!-- 1. Phone -->
+      <div class="form-group">
+        <label for="phone">Phone Number <span class="required-asterisk">*</span></label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g. +1 555-0199" required>
+      </div>
+
+      <!-- 2. Date input for Date of Birth -->
+      <div class="form-group">
+        <label for="dob">Date of Birth <span class="required-asterisk">*</span></label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+
+      <!-- 3. URL input for Portfolio URL -->
+      <div class="form-group">
+        <label for="portfolio">Portfolio URL</label>
+        <input type="url" id="portfolio" name="portfolio" placeholder="https://myportfolio.com">
+      </div>
+
+      <!-- Disabled Field Example -->
+      <div class="form-group">
+        <label for="applicationCode">Application Reference Code (Auto-generated)</label>
+        <input type="text" id="applicationCode" name="applicationCode" value="APP-2026-X892" disabled>
+      </div>
+
+      <!-- 4. Radio buttons for Preferred Shift (Shared name attribute) -->
+      <div class="form-group">
+        <label>Preferred Shift <span class="required-asterisk">*</span></label>
+        <div class="radio-group">
+          <label class="inline-label">
+            <input type="radio" name="shift" value="morning" required> Morning
+          </label>
+          <label class="inline-label">
+            <input type="radio" name="shift" value="evening"> Evening
+          </label>
+          <label class="inline-label">
+            <input type="radio" name="shift" value="night"> Night
+          </label>
+        </div>
+      </div>
+
+      <!-- 5. Checkboxes for Skills -->
+      <div class="form-group">
+        <label>Skills</label>
+        <div class="checkbox-group">
+          <label class="inline-label">
+            <input type="checkbox" name="skills" value="html"> HTML
+          </label>
+          <label class="inline-label">
+            <input type="checkbox" name="skills" value="css"> CSS
+          </label>
+          <label class="inline-label">
+            <input type="checkbox" name="skills" value="javascript"> JavaScript
+          </label>
+          <label class="inline-label">
+            <input type="checkbox" name="skills" value="react"> React
+          </label>
+        </div>
+      </div>
+
+      <!-- 6. Dropdown for Job Role -->
+      <div class="form-group">
+        <label for="jobRole">Job Role <span class="required-asterisk">*</span></label>
+        <select id="jobRole" name="jobRole" required>
+          <option value="" disabled selected>-- Select a Position --</option>
+          <option value="frontend_developer">Frontend Developer</option>
+          <option value="backend_developer">Backend Developer</option>
+          <option value="ui_ux_designer">UI/UX Designer</option>
+          <option value="qa_engineer">QA Engineer</option>
+        </select>
+      </div>
+
+      <!-- 7. Textarea for Cover Letter -->
+      <div class="form-group">
+        <label for="coverLetter">Cover Letter <span class="required-asterisk">*</span></label>
+        <textarea id="coverLetter" name="coverLetter" placeholder="Tell us why you're a great fit for this role..." required></textarea>
+      </div>
+
+      <!-- 8. Submit Button -->
+      <button type="submit">Submit Application</button>
+
+    </form>
+  </div>
+
+</body>
+</html>
+Key Highlights Checklist:
+Full name, Email, Phone: Handled with appropriate text, email, and tel input types.
+
+Date of Birth: input type="date" utilized.
+
+Portfolio URL: input type="url" with standard pattern requirement/validation.
+
+Radio Buttons: Grouped with the same name="shift" attribute for mutual exclusivity.
+
+Checkboxes: Options provided for candidate skills.
+
+Dropdown Menu: <select> element for choosing job roles.
+
+Cover Letter: Multiline <textarea> for candidate details.
+
+Disabled Field: Example added via disabled attribute (Application Reference Code).
+
+Labels & Required Attributes: Every single field includes an explicitly linked <label>, and mandatory fields include required.
